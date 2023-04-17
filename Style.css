@@ -11,8 +11,9 @@ body {
     height: 100vh;
     background-color: black;
     background-image: url(https://blog.depositphotos.com/wp-content/uploads/2017/07/Soothing-nature-backgrounds-2.jpg.webp);
-    background-size: cover;
-    background-position: center;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* ----------------------------------navbar---------------------------------- */
@@ -28,7 +29,7 @@ li a {
     text-decoration: none;
 }
 
-li a:hover {
+.navbar a:hover {
     color: rgb(255, 150, 29);
 }
 
@@ -40,11 +41,12 @@ header {
 .navbar {
     width: 100%;
     height: 60px;
-    max-width: 1500px;
+    max-width: 2000px;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    position:fixed;
 }
 
 .navbar .logo a {
@@ -54,12 +56,20 @@ header {
     font-weight: bold;
 }
 
+.navbar .logo a:hover {
+    color: rgb(255, 150, 29);
+}
+
 ul {
     display: flex;
     gap: 2rem;
 }
 
 /* ----------------------------------home---------------------------------- */
+
+.home {
+    height: 150vh;
+}
 
 .box {
     position: absolute;
@@ -70,24 +80,33 @@ ul {
 
 .box span {
     display: block;
-    width: 11rem;
-    height: 11rem;
-    border-bottom: 1.5rem solid rgb(236, 180, 96);
-    border-right: 1.5rem solid rgb(236, 180, 96);
+    width: 20vh;
+    height: 20vh;
     transform: rotate(45deg);
-    margin: -4rem;
+    margin: -8vh;
     animation: animate 2s infinite;
 }
 
+.box span:nth-child(1) {
+    border-bottom: 1.5rem solid rgb(240, 198, 134);
+    border-right: 1.5rem solid rgb(240, 198, 134);
+}
+
 .box span:nth-child(2) {
+    border-bottom: 1.5rem solid rgb(240, 182, 96);
+    border-right: 1.5rem solid rgb(240, 182, 96);
     animation-delay: -0.2s;
 }
 
 .box span:nth-child(3) {
+    border-bottom: 1.5rem solid rgb(240, 165, 52);
+    border-right: 1.5rem solid rgb(240, 165, 52);
     animation-delay: -0.4s;
 }
 
 .box span:nth-child(4) {
+    border-bottom: 1.5rem solid rgb(240, 144, 0);
+    border-right: 1.5rem solid rgb(240, 144, 0);
     animation-delay: -0.6s;
 }
 
@@ -103,4 +122,133 @@ ul {
         opacity: 0;
         transform: rotate(45deg) translate(20px,20px);
     }
+}
+
+/* ----------------------------------about---------------------------------- */
+
+.about {
+    height: 150vh;
+}
+
+.about h1 {
+    color: rgb(255, 165, 55);
+    font-size: 250%;
+    text-align: center;
+    padding-bottom: 12vh;
+}
+
+.about img {
+    height: 50vh;
+    margin: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+.about .container {
+    position: relative;
+    width: 1200px;
+    height: 300px;
+    margin: 150px auto;
+}
+
+.text-box {
+    position: relative;
+    width: calc(400px - 30px);
+    height: calc(300px - 30px);
+    background: #000;
+    float: left;
+    margin: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.text-box .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f00;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.text-box:hover .icon {
+    top: 20px;
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.text-box .icon .fa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 80px;
+    transition: 0.5s;
+    color: #fff;
+}
+
+.text-box:hover .icon .fa {
+    font-size: 40px;
+}
+
+.text-box .content {
+    position: absolute;
+    top: 100%;
+    height: calc(100% - 100px);
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.text-box:nth-child(2) .content{
+    padding-left: 68px;
+}
+
+.text-box:hover .content {
+    top: 100px;
+    opacity: 1;
+}
+
+.text-box .content h3 {
+    margin: 0 0 10px;
+    padding: 0;
+    color: #fff;
+    font-size: 24px;
+}
+
+.text-box .content p {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+.container .text-box:nth-child(1) .icon{
+    background: #ff6e0e;
+}
+
+.container .text-box:nth-child(1) {
+    background: #ff7d26;
+}
+
+.container .text-box:nth-child(2) .icon{
+    background: #c90c0c;
+}
+
+.container .text-box:nth-child(2) {
+    background: #d82424;
+}
+
+.container .text-box:nth-child(3) .icon{
+    background: #7f0db4;
+}
+
+.container .text-box:nth-child(3) {
+    background: #8a18be;
 }
