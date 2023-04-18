@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      src="https://kit.fontawesome.com/4a0eae9d40.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>Introduce | Phonlakrit</title>
+    <style type="text/css">
+      * {
+        transition: all 0.2s;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Prompt", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        height: 100vh;
+        background-color: black;
+        background-image: url(https://blog.depositphotos.com/wp-content/uploads/2017/07/Soothing-nature-backgrounds-2.jpg.webp);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+      .go-Top {
+        color: #000000;
+        position: fixed;
+        display: block;
+        top: 90%;
+        right: 3vh;
+        display: block;
+        border-radius: 50%;
+        width: 5vh;
+        height: 5.2vh;
+        background-color: rgb(255, 94, 0);
+        z-index: 100;
+        align-items: center;
+        font-size: 3.7vh;
+        padding: 0.7vh;
+      }
+
+      .go-Top:hover {
+        color: rgb(255, 94, 0);
+        background-color: white;
+      }
+
+      .head {
+        color: rgb(255, 165, 55);
+        font-size: 6vh;
+        text-align: center;
+        padding-bottom: 12vh;
+        font-weight: bold;
+      }
+
+      /* ----------------------------------navbar---------------------------------- */
+
+      li {
+        list-style: none;
+      }
+
+      li a {
+        color: white;
+        font-size: 1.2rem;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      .navbar a:hover {
+        color: rgb(255, 150, 29);
+      }
+
+      header {
+        position: relative;
+        padding: 0 2rem;
+      }
+
+      .navbar {
+        z-index: 999;
+        width: 100%;
+        height: 60px;
+        max-width: 2000px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: fixed;
+      }
+
+      .navbar .logo a {
+        text-decoration: none;
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .navbar .logo a:hover {
+        color: rgb(255, 150, 29);
+      }
+
+      ul {
+        display: flex;
+        gap: 2rem;
+      }
+
+      /* ----------------------------------home---------------------------------- */
+
+      .home {
+        height: 150vh;
+      }
+
+      .box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .box span {
+        display: block;
+        width: 20vh;
+        height: 20vh;
+        transform: rotate(45deg);
+        margin: -8vh;
+        animation: animate 2s infinite;
+      }
+
+      .box span:nth-child(1) {
+        border-bottom: 1.5rem solid rgb(240, 198, 134);
+        border-right: 1.5rem solid rgb(240, 198, 134);
+      }
+
+      .box span:nth-child(2) {
+        border-bottom: 1.5rem solid rgb(240, 182, 96);
+        border-right: 1.5rem solid rgb(240, 182, 96);
+        animation-delay: -0.2s;
+      }
+
+      .box span:nth-child(3) {
+        border-bottom: 1.5rem solid rgb(240, 165, 52);
+        border-right: 1.5rem solid rgb(240, 165, 52);
+        animation-delay: -0.4s;
+      }
+
+      .box span:nth-child(4) {
+        border-bottom: 1.5rem solid rgb(240, 144, 0);
+        border-right: 1.5rem solid rgb(240, 144, 0);
+        animation-delay: -0.6s;
+      }
+
+      @keyframes animate {
+        0% {
+          opacity: 0;
+          transform: rotate(45deg) translate(-20px, -20px);
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: rotate(45deg) translate(20px, 20px);
+        }
+      }
+
+      /* ----------------------------------about---------------------------------- */
+
+      .about {
+        height: 150vh;
+      }
+
+      .about img {
+        height: 50vh;
+        margin: auto;
+        border-radius: 10px;
+        display: block;
+      }
+
+      .about .container {
+        position: relative;
+        width: 1200px;
+        height: 300px;
+        margin: 150px auto;
+      }
+
+      .text-box {
+        position: relative;
+        width: calc(400px - 30px);
+        height: calc(300px - 30px);
+        background: #000;
+        float: left;
+        margin: 15px;
+        box-sizing: border-box;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      .text-box .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #f00;
+        transition: 0.5s;
+        z-index: 1;
+      }
+
+      .text-box:hover .icon {
+        top: 20px;
+        left: calc(50% - 40px);
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+
+      .text-box .icon .fa {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 80px;
+        transition: 0.5s;
+        color: #fff;
+      }
+
+      .text-box:hover .icon .fa {
+        font-size: 40px;
+      }
+
+      .text-box .content {
+        position: absolute;
+        top: 100%;
+        height: calc(100% - 100px);
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+        transition: 0.5s;
+        opacity: 0;
+      }
+
+      .text-box:nth-child(2) .content {
+        padding-left: 68px;
+      }
+
+      .text-box:hover .content {
+        top: 100px;
+        opacity: 1;
+      }
+
+      .text-box .content h3 {
+        margin: 0 0 10px;
+        padding: 0;
+        color: #fff;
+        font-size: 24px;
+      }
+
+      .text-box .content p {
+        margin: 0;
+        padding: 0;
+        color: #fff;
+      }
+
+      .container .text-box:nth-child(1) .icon {
+        background: #ff6e0e;
+      }
+
+      .container .text-box:nth-child(1) {
+        background: #ff7d26;
+      }
+
+      .container .text-box:nth-child(2) .icon {
+        background: #c90c0c;
+      }
+
+      .container .text-box:nth-child(2) {
+        background: #d82424;
+      }
+
+      .container .text-box:nth-child(3) .icon {
+        background: #7f0db4;
+      }
+
+      .container .text-box:nth-child(3) {
+        background: #8a18be;
+      }
+
+      /* ----------------------------------skills---------------------------------- */
+
+      .skills {
+        height: 120vh;
+      }
+
+      .skills .container {
+        padding-top: 15vh;
+        width: 110vh;
+        margin: auto;
+      }
+
+      .carrousel {
+        display: grid;
+        grid-auto-flow: column;
+        scroll-behavior: auto;
+        gap: 1.2rem;
+        overflow-y: auto;
+        scrollbar-width: none;
+      }
+
+      .carrousel::-webkit-scrollbar {
+        display: none;
+      }
+
+      .card {
+        scroll-snap-align: start;
+        border-radius: 30px;
+        min-height: 45vh;
+        min-width: 45vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #00000036;
+      }
+
+      .card img {
+        height: 42vh;
+      }
+
+      /* ----------------------------------contact---------------------------------- */
+
+      .contact {
+        background-color: rgb(204, 109, 71);
+        background-size: cover;
+        height: 40vh;
+      }
+
+      .contact p {
+        color: #fff;
+      }
+
+      .contact .container i {
+        font-size: 100%;
+      }
+
+      .contact .container {
+        display: flex;
+        justify-content: center;
+        font-size: 22px;
+        align-items: center;
+      }
+
+      .contact > .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact .container i {
+        font-size: 100%;
+        color: #fff;
+        margin: auto 1rem;
+      }
+
+      .contact .icon {
+        display: flex;
+        justify-content: top;
+        align-items: center;
+        height: 10vh;
+      }
+
+      .contact .icon i {
+        font-size: 40px;
+        margin: auto 0.5rem;
+      }
+
+      .contact .icon i:hover {
+        color: rgb(25, 0, 255);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo"><a href="#">Phonlakrit Chaengtamtham</a></div>
+        <ul>
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#skills">SKILLS</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+    <a href="#home"><i class="go-Top fa-solid fa-circle-arrow-up"></i></a>
+
+    <!-- home -->
+
+    <section class="home" id="home">
+      <div class="box">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </section>
+
+    <!-- about -->
+
+    <section class="about" id="about">
+      <h1 class="head">
+        <i class="fa-solid fa-user"></i>
+        ABOUT ME
+      </h1>
+      <img
+        id="My-pic"
+        src="https://cdn.discordapp.com/attachments/886275971265740870/1097861816803135538/0d76645e29050ae5.jpg"
+      />
+      <div class="container">
+        <div class="text-box">
+          <div class="icon">
+            <i class="fa fa-solid fa-user"></i>
+          </div>
+          <div class="content">
+            <h3>Profile</h3>
+            <p>
+              Name : Phonlakrit Chaengtamtham Nickname : Pai<br />
+              Birth Day : 5 June 2006
+            </p>
+          </div>
+        </div>
+        <div class="text-box">
+          <div class="icon">
+            <i class="fa fa-solid fa-location-dot"></i>
+          </div>
+          <div class="content">
+            <h3>About</h3>
+            <p>
+              School : Debsirin School <br />
+              Phone : 083-806-8861 <br />
+              Email : phonlakritc@gmail.com
+            </p>
+          </div>
+        </div>
+        <div class="text-box">
+          <div class="icon">
+            <i class="fa fa-solid fa-play"></i>
+          </div>
+          <div class="content">
+            <h3>Hobby</h3>
+            <p>
+              collect model, coding, listen to music, watch movie, play game
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- skills -->
+
+    <section class="skills" id="skills">
+      <h1 class="head">
+        <i class="fa-solid fa-code"></i>
+        SKILLS
+      </h1>
+      <div class="container">
+        <div class="carrousel" id="scroll">
+          <article class="card">
+            <img
+              src="https://cdn.discordapp.com/attachments/886275971265740870/1097864565166964816/C_Logo.png"
+            />
+          </article>
+          <article class="card">
+            <img
+              src="https://cdn.discordapp.com/attachments/886275971265740870/1097864565460574399/C_Logo.png"
+            />
+          </article>
+          <article class="card">
+            <img
+              src="https://cdn.discordapp.com/attachments/886275971265740870/1097864566194577418/HTML_Logo.png"
+            />
+          </article>
+          <article class="card">
+            <img
+              src="https://cdn.discordapp.com/attachments/886275971265740870/1097864565716430959/CSS_Logo.png"
+            />
+          </article>
+          <article class="card">
+            <img
+              src="https://cdn.discordapp.com/attachments/886275971265740870/1097864566416879656/JS_Logo.png"
+            />
+          </article>
+          <article class="card">
+            <img
+              src="https://cdn.discordapp.com/attachments/886275971265740870/1097864565938716844/GITHUB_Logo.png"
+            />
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact -->
+
+    <section class="contact" id="contact">
+      <h1 class="head">
+        <i class="fa-solid fa-address-card"></i>
+        CONTACT
+      </h1>
+      <div class="wrapper">
+        <div class="container">
+          <i class="fa-solid fa-phone"></i>
+          <p>083-806-8861</p>
+        </div>
+        <div class="container">
+          <i class="fa-solid fa-envelope"></i>
+          <p>phonlakritc@gmail.com</p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="icon">
+          <a href="https://github.com/itzPEKOS">
+            <div class="icon-border">
+              <i class="fa-brands fa-github"></i>
+            </div>
+          </a>
+          <a href="https://www.facebook.com/pai.phonlakrit">
+            <div class="icon-border">
+              <i class="fa-brands fa-facebook"></i>
+            </div>
+          </a>
+          <a href="https://www.instagram.com/pplk_pai/">
+            <div class="icon-border">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const pic = document.querySelector("#My-pic");
+      const walk = 100;
+
+      function shadow(e) {
+        const { offsetWidth: width, offsetHeight: height } = pic;
+        let { offsetX: x, offsetY: y } = e;
+
+        if (this !== e.target) {
+          x = x + e.target.offsetLeft;
+          y = y + e.target.offsetTop;
+        }
+
+        const xwalk = (x / width) * walk - walk / 2;
+        const ywalk = (y / height) * walk - walk / 2;
+
+        pic.style.boxShadow = `${xwalk}px ${ywalk}px 100px rgb(228, 165, 87)`;
+      }
+
+      pic.addEventListener("mousemove", shadow);
+      pic.addEventListener("mouseleave", function () {
+        const pic = document.querySelector("#My-pic");
+        pic.style.boxShadow = "none";
+      });
+
+      // scroll horizon
+
+      const element = document.querySelector("#scroll");
+
+      element.addEventListener("wheel", (event) => {
+        event.preventDefault();
+
+        element.scrollBy({
+          left: event.deltaY < 0 ? -30 : 30,
+        });
+      });
+    </script>
+  </body>
+</html>
